@@ -1,0 +1,22 @@
+.indexLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.indexH3 {
+  margin-bottom: 1rem;
+}
+
+.indexSpan {
+  color: var(--secondaryTitle);
+}
+
+.langEntryContainer {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0px 15px;
+}

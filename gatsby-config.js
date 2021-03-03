@@ -1,23 +1,42 @@
 module.exports = {
   siteMetadata: {
-    title: `A blog by Bahaa Zidan`,
-    description: `You'll find blogs about programming, hardware, career, and sometimes life.`,
-    author: `Bahaa Zidan`,
+    ar: {
+      title: `مدونة بهاء زيدان`,
+      description: `ستجد مقالات عن البرمجة و الهاردوير و التعليم و أحياناً سأتحدث عن أشياء عميقة`,
+      author: `بهاء زيدان`,
+    },
+    en: {
+      title: `A blog by Bahaa Zidan`,
+      description: `You'll find blogs about programming, hardware, career, and sometimes life.`,
+      author: `Bahaa Zidan`,
+    },
   },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `src`,
-        path: `${__dirname}/src/content`,
+        name: `pages`,
+        path: `${__dirname}/src/pages`,
       },
     },
-    `gatsby-transformer-remark`,
-    `gatsby-plugin-emotion`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [`gatsby-remark-prismjs`],
+      },
+    },
     {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-i18n",
+      options: {
+        langKeyForNull: "any",
+        langKeyDefault: "en",
+        useLangKeyLayout: true,
       },
     },
     {
@@ -36,5 +55,6 @@ module.exports = {
     },
     `gatsby-plugin-offline`, // must be listed after the 'gatsby-plugin-manifest' plugin
     `gatsby-plugin-react-helmet`,
+    "gatsby-plugin-dark-mode",
   ],
 };
