@@ -4,7 +4,30 @@ import { useStaticQuery, Link, graphql } from "gatsby";
 
 import ThemeToggler from "../components/theme-toggler";
 
-export default function Layout({ children }) {
+const LayoutTemplate = ({
+  className,
+  headerLink,
+  headerText,
+  contactLink,
+  contactText,
+  children,
+}) => {
+  return (
+    <div className={`layoutContainer ${className}`}>
+      <div className="layoutContent">
+        <header className="layoutHeader">
+          <Link to={headerLink}>
+            <h3 className="layoutTitle">{headerText}</h3>
+          </Link>
+          <ThemeToggler />
+        </header>
+        {children}
+      </div>
+    </div>
+  );
+};
+
+export default ({ children }) => {
   const data = useStaticQuery(
     graphql`
       query {
@@ -24,37 +47,30 @@ export default function Layout({ children }) {
 
   if (window.location.href.includes("/en")) {
     return (
-      <div className="layoutContainer">
-        <div className="layoutContent">
-          <header className="layoutHeader">
-            <Link to={`/en`}>
-              <h3 className="layoutTitle">{data.site.siteMetadata.en.title}</h3>
-            </Link>
-            <ThemeToggler />
-            <Link to={`/en/contact/`}>Contact</Link>
-          </header>
-          {children}
-        </div>
-      </div>
+      <LayoutTemplate
+        headerLink="/en"
+        headerText={data.site.siteMetadata.en.title}
+        contactLink="/en/contact/"
+        contactText="Contact"
+      >
+        {children}
+      </LayoutTemplate>
     );
   }
 
   if (window.location.href.includes("/ar")) {
     return (
-      <div className="layoutContainer ar">
-        <div className="layoutContent">
-          <header className="layoutHeader">
-            <Link to={`/ar`}>
-              <h3 className="layoutTitle">{data.site.siteMetadata.ar.title}</h3>
-            </Link>
-            <ThemeToggler />
-            <Link to={`/ar/contact/`}>تواصل</Link>
-          </header>
-          {children}
-        </div>
-      </div>
+      <LayoutTemplate
+        className="ar"
+        headerLink="/ar"
+        headerText={data.site.siteMetadata.ar.title}
+        contactLink="/ar/contact/"
+        contactText="تواصل"
+      >
+        {children}
+      </LayoutTemplate>
     );
   }
 
   return <>{children}</>;
-}
+};
