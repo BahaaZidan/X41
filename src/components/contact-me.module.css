@@ -1,0 +1,14 @@
+.container {
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid var(--textNormal);
+
+  margin: 15px 0;
+}
+
+.container a {
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+}

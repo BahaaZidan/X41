@@ -15,6 +15,7 @@
 }
 
 .layoutContent {
+  width: 100%;
   max-width: 700px;
   padding-top: 1.35rem;
   padding: 20px;

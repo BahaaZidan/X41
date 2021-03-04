@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../layouts";
 import SEO from "../components/seo";
+import ContactMe from "../components/contact-me";
 
 export default function BlogPost({ data }) {
   const post = data.markdownRemark;
@@ -11,6 +12,7 @@ export default function BlogPost({ data }) {
       <article>
         <h1>{post.frontmatter.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <ContactMe ar={post.fields.langKey === "ar"} />
       </article>
     </Layout>
   );
@@ -22,6 +24,9 @@ export const query = graphql`
       html
       frontmatter {
         title
+      }
+      fields {
+        langKey
       }
       excerpt
     }

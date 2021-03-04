@@ -3,29 +3,33 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 import Layout from "../layouts";
 import SEO from "../components/seo";
+import ContactMe from "../components/contact-me";
 
 export default function Home({ data }) {
+  const posts = data.allMarkdownRemark.edges.filter(
+    ({ node }) => node.fields.langKey === "ar"
+  );
+
   return (
     <Layout>
       <SEO
         title={data.site.siteMetadata.ar.title}
         description={data.site.siteMetadata.ar.description}
       />
+      <ContactMe ar />
       <div>
-        <h4>{`${data.allMarkdownRemark.totalCount} مقالات`}</h4>
-        {data.allMarkdownRemark.edges
-          .filter(({ node }) => node.fields.langKey === "ar")
-          .map(({ node }) => (
-            <div key={node.id}>
-              <Link to={node.fields.slug} className="indexLink">
-                <h3 className="indexH3">
-                  {node.frontmatter.title}{" "}
-                  <span className="indexSpan">— {node.frontmatter.date}</span>
-                </h3>
-                <p>{node.excerpt}</p>
-              </Link>
-            </div>
-          ))}
+        <h4>{`${posts.length} مقالات`}</h4>
+        {posts.map(({ node }) => (
+          <div key={node.id}>
+            <Link to={node.fields.slug} className="indexLink">
+              <h3 className="indexH3">
+                {node.frontmatter.title}{" "}
+                <span className="indexSpan">— {node.frontmatter.date}</span>
+              </h3>
+              <p>{node.excerpt}</p>
+            </Link>
+          </div>
+        ))}
       </div>
     </Layout>
   );

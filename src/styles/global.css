@@ -6,7 +6,8 @@ body {
   --bg: white;
   --textNormal: #222;
   --textTitle: #222;
-  --textLink: rgb(123, 123, 218);
+  --textLink: #222;
+  /* --textLink: rgb(123, 123, 218); */
   --hr: hsla(0, 0%, 0%, 0.2);
   --secondaryTitle: #555;
 
@@ -20,7 +21,8 @@ body.dark {
   --bg: #282c35;
   --textNormal: rgba(255, 255, 255, 0.88);
   --textTitle: white;
-  --textLink: rgb(204, 204, 105);
+  --textLink: rgba(255, 255, 255, 0.88);
+  /* --textLink: rgb(204, 204, 105); */
   --hr: hsla(0, 0%, 100%, 0.2);
   --secondaryTitle: rgba(255, 255, 255, 0.3);
 }
