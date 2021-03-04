@@ -5,7 +5,7 @@ import Layout from "../layouts";
 
 export default function About({ data }) {
   return (
-    <Layout>
+    <Layout langKey="ar">
       <h1>Hello friend</h1>
       <p>
         We're the only site running on your computer dedicated to showing the

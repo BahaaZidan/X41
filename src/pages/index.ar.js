@@ -11,7 +11,7 @@ export default function Home({ data }) {
   );
 
   return (
-    <Layout>
+    <Layout langKey="ar">
       <SEO
         title={data.site.siteMetadata.ar.title}
         description={data.site.siteMetadata.ar.description}

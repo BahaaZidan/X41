@@ -27,7 +27,7 @@ const LayoutTemplate = ({
   );
 };
 
-export default ({ children }) => {
+export default ({ children, langKey }) => {
   const data = useStaticQuery(
     graphql`
       query {
@@ -45,7 +45,7 @@ export default ({ children }) => {
     `
   );
 
-  if (window.location.href.includes("/en")) {
+  if (langKey === "en") {
     return (
       <LayoutTemplate
         headerLink="/en"
@@ -58,7 +58,7 @@ export default ({ children }) => {
     );
   }
 
-  if (window.location.href.includes("/ar")) {
+  if (langKey === "ar") {
     return (
       <LayoutTemplate
         className="ar"

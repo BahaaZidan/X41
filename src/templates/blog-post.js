@@ -7,7 +7,7 @@ import ContactMe from "../components/contact-me";
 export default function BlogPost({ data }) {
   const post = data.markdownRemark;
   return (
-    <Layout>
+    <Layout langKey={post.fields.langKey}>
       <SEO title={post.frontmatter.title} description={post.excerpt} />
       <article>
         <h1>{post.frontmatter.title}</h1>

@@ -10,7 +10,7 @@ export default function Home({ data }) {
     ({ node }) => node.fields.langKey === "en"
   );
   return (
-    <Layout>
+    <Layout langKey="en">
       <SEO
         title={data.site.siteMetadata.en.title}
         description={data.site.siteMetadata.en.description}
