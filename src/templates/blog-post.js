@@ -15,7 +15,7 @@ export default function BlogPost({ data }) {
           dangerouslySetInnerHTML={{ __html: post.html }}
           style={{ marginBottom: "2rem" }}
         />
-        <ContactMe ar={post.fields.langKey === "ar"} />
+        <ContactMe ar={post.fields.langKey === "ar"} thanks />
       </article>
     </Layout>
   );

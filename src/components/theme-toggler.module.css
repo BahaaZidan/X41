@@ -1,9 +1,0 @@
-.toggler {
-  cursor: pointer;
-  border: 1px solid var(--textNormal);
-  padding: 5px;
-}
-
-[type="checkbox"] {
-  display: none;
-}
