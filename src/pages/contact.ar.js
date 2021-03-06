@@ -6,11 +6,7 @@ import Layout from "../layouts";
 export default function About({ data }) {
   return (
     <Layout langKey="ar">
-      <h1>Hello friend</h1>
-      <p>
-        We're the only site running on your computer dedicated to showing the
-        best photos and videos of pandas eating lots of food.
-      </p>
+      <h1>السلام عليكم</h1>
       <ul>
         <li>
           <a href="mailto:gebnatorky@gmail.com">gebnatorky@gmail.com</a>

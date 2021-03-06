@@ -27,12 +27,6 @@ body.dark {
   --secondaryTitle: rgba(255, 255, 255, 0.3);
 }
 
-.youtubeIframe {
-  max-width: 600px;
-  width: 100%;
-  height: 300px;
-}
-
 pre {
   max-width: calc(100vw - 5px);
   direction: ltr;
