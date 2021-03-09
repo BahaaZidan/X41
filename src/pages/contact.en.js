@@ -1,9 +1,8 @@
 import React from "react";
-import { graphql } from "gatsby";
 
 import Layout from "../layouts";
 
-export default function About({ data }) {
+export default function About() {
   return (
     <Layout langKey="en">
       <h1>Hello friend</h1>
@@ -20,17 +19,16 @@ export default function About({ data }) {
             Linkedin
           </a>
         </li>
+        <li>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/BahaaZidan"
+          >
+            Github
+          </a>
+        </li>
       </ul>
     </Layout>
   );
 }
-
-export const query = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`;
